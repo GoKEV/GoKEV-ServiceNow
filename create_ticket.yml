@@ -7,15 +7,12 @@
   tasks:
   - name: Create incident
     servicenow.itsm.incident:
-      state: new
-      caller: some.user
-      short_description: User is not receiving email
-      description: User has been unable to receive email for the past 15 minutes
-      attachments:
-        - path: path/to/attachment.txt
+      state: "{{ snticket_state | default('new') }}"
+      caller: "{{ snticket_caller | default('Ansible Playbook') }}"
+      short_description: "{{ snticket_shdesc | default('playbook created missing short description') }}"
+      description: "{{ snticket_desc | default(omit) }}"
       impact: low
       urgency: low
-
       other:
         expected_start: 2021-02-12
 
