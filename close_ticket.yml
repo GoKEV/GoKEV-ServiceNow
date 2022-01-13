@@ -1,0 +1,13 @@
+---
+- name: Create ticket with notes
+  hosts: localhost
+  gather_facts: no
+  connection: local
+
+  tasks:
+  - name: Close incident
+    servicenow.itsm.incident:
+      state: closed
+      number: INC0010001
+      close_code: "Solved (Permanently)"
+      close_notes: "Closed"
