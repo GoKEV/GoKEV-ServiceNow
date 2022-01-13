@@ -5,21 +5,17 @@
   connection: local
 
   tasks:
-#  - name: include vars
-#    include_vars: change_request_vars.yml
+    - name: Create incident
+    servicenow.itsm.incident:
+      state: new
+      caller: some.user
+      short_description: User is not receiving email
+      description: User has been unable to receive email for the past 15 minutes
+      attachments:
+        - path: path/to/attachment.txt
+      impact: low
+      urgency: low
 
-  - name: Create a change request
-    snow_record:
-      state: present
-      table: change_request
-      username: '{{ lookup("env", "SN_USERNAME") }}'
-      password: '{{ lookup("env", "SN_PASSWORD") }}'
-      instance: '{{ lookup("env", "SN_INSTANCE") }}'
-      data:
-        severity: "{{ sn_severity }}"
-        priority: "{{ sn_priority }}"
-        short_description: "This is a test opened by Ansible"
-    register: new_incident
+      other:
+        expected_start: 2021-02-12
 
-  - debug: 
-      var: new_incident.record
