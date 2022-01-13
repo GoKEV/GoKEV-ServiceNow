@@ -12,9 +12,9 @@
     snow_record:
       state: present
       table: change_request
-      username: "{{ sn_username }}"
-      password: "{{ sn_password }}"
-      instance: "{{ sn_instance }}"
+      username: '{{ lookup("env", "SN_USERNAME") }}'
+      password: '{{ lookup("env", "SN_PASSWORD") }}'
+      instance: '{{ lookup("env", "SN_INSTANCE") }}'
       data:
         severity: "{{ sn_severity }}"
         priority: "{{ sn_priority }}"
