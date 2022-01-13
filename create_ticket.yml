@@ -5,8 +5,8 @@
   connection: local
 
   tasks:
-  - name: include vars
-    include_vars: change_request_vars.yml
+#  - name: include vars
+#    include_vars: change_request_vars.yml
 
   - name: Create a change request
     snow_record:
