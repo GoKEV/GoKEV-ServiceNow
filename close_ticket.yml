@@ -9,7 +9,7 @@
     servicenow.itsm.incident:
       state: resolved
       number: INC0010001
-      close_code: "Resolved"
+      close_code: "Solved (Permanently)"
       close_notes: "Resolved"
       
   - name: Close incident
