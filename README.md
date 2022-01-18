@@ -32,7 +32,6 @@ in production as-is.
 
 Examples:
 --------
-.. code-block:: yaml
 
     - name: Create incident
         state: new
