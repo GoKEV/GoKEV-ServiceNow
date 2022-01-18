@@ -15,25 +15,10 @@ in production as-is.
 # vars used in create_ticket.yml
 <pre>
 ---
-
----
-- name: Create ticket with notes
-  hosts: localhost
-  gather_facts: no
-  connection: local
-
-  tasks:
-  - name: Create incident
-    servicenow.itsm.incident:
-      state: "{{ snticket_state | default('new') }}"
-      caller: "{{ snticket_caller | default(omit) }}"
-      short_description: "{{ snticket_shdesc | default('playbook created missing short description') }}"
-      description: "{{ snticket_desc | default(omit) }}"
-      impact: low
-      urgency: low
-      other:
-        expected_start: 2021-02-12
-
+- snticket_state: 
+- snticket_caller:
+- short_description: playbook created missing short description
+- snticket_desc:
 </pre>
 
 
