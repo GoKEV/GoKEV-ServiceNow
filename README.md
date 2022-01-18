@@ -32,11 +32,7 @@ in production as-is.
 
 These examples differ slightly from the ones on the official documentation, because we are
 using a custom credential and these playbooks don't need plaintext user / password / instance
-written into them.  
-
-<a href="https://github.com/ansible-collections/servicenow.itsm/blob/main/docs/servicenow.itsm.incident_module.rst" target="_blank">The original documentation for this module is here.</a>
-
-[go](http://stackoverflow.com){:target="_blank" rel="noopener"}
+written into them.  [The original documentation for this module is here.](https://github.com/ansible-collections/servicenow.itsm/blob/main/docs/servicenow.itsm.incident_module.rst).
 
 Examples:
 --------
