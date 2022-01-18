@@ -14,11 +14,20 @@ in production as-is.
 
 # vars used in create_ticket.yml
 <pre>
+
+# All fields below are optional, as a default value will be placed by this playbook where necessary.
 ---
-- snticket_state: 
-- snticket_caller:
-- short_description: playbook created missing short description
-- snticket_desc:
+# Can be low, medium, high -- (if omitted, these impact and urgency values default 'low' in this playbook).
+- snticket_impact: low
+- snticket_urgency: low
+#Custom states can be added.  By default, this should be a string stating:  Pending, Open, Work in Progress, Closed Complete, Closed Incomplete, or Closed Skipped
+- snticket_state: Open
+- snticket_caller:  The user who created the ticket.  This will default fo the service account running this playbook
+- short_description: This is a short description of the issue.
+- snticket_desc:  This is a description of the issue that goes into slightly more detail than the short description and probably has a lot more information that will be required for troubleshooting and root cause analysis.
+- sn_slastart: 2022-01-18
+
+
 </pre>
 
 
