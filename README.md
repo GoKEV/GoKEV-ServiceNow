@@ -65,4 +65,6 @@ Author(s) Information
 This project was created in January 2022 by [Kevin Holmes](http://GoKEV.com/), based on the previous work of others.  Let's give them credit here:
 
 - [Colin McCarthy's post on ServiceNow](https://www.ansible.com/blog/ansible-servicenow-opening-and-closing-tickets)
+- [Michael Ford's post on ServiceNow APIs](https://www.ansible.com/blog/ansible-servicenow-howto-part-3-making-outbound-restful-api-calls-to-ansible-tower)
+- [Some examples of using the Ansible Certified Collection from the Ansible blog](https://www.ansible.com/blog/certified-collection-servicenow)
 
