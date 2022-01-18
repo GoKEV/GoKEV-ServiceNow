@@ -35,12 +35,6 @@ Examples:
 .. code-block:: yaml
 
     - name: Create incident
-      servicenow.itsm.incident:
-        instance:
-          host: https://instance_id.service-now.com
-          username: user
-          password: pass
-
         state: new
         caller: some.user
         short_description: User is not receiving email
@@ -55,21 +49,11 @@ Examples:
 
     - name: Change state of the incident
       servicenow.itsm.incident:
-        instance:
-          host: https://instance_id.service-now.com
-          username: user
-          password: pass
-
         state: in_progress
         number: INC0000001
 
     - name: Close incident
       servicenow.itsm.incident:
-        instance:
-          host: https://instance_id.service-now.com
-          username: user
-          password: pass
-
         state: closed
         number: INC0000001
         close_code: "Solved (Permanently)"
@@ -77,11 +61,6 @@ Examples:
 
     - name: Delete incident
       servicenow.itsm.incident:
-        instance:
-          host: https://instance_id.service-now.com
-          username: user
-          password: pass
-
         state: absent
         number: INC0000001
 
