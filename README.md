@@ -20,7 +20,7 @@ in production as-is.
 # Can be low, medium, high -- (if omitted, these impact and urgency values default 'low' in this playbook).
 - snticket_impact: low
 - snticket_urgency: low
-#Custom states can be added.  By default, this should be a string stating:  Pending, Open, Work in Progress, Closed Complete, Closed Incomplete, or Closed Skipped
+#Custom states can be added.  By default, this should be a string stating:  Pending, Open, Work in Progress, Closed Complete, Closed Incomplete, or Closed Skipped -- or "absent" to delete the incident
 - snticket_state: Open
 - snticket_caller:  The user who created the ticket.  This will default fo the service account running this playbook
 - short_description: This is a short description of the issue.
@@ -30,8 +30,60 @@ in production as-is.
 
 </pre>
 
+Examples:
+--------
+.. code-block:: yaml
 
+    - name: Create incident
+      servicenow.itsm.incident:
+        instance:
+          host: https://instance_id.service-now.com
+          username: user
+          password: pass
 
+        state: new
+        caller: some.user
+        short_description: User is not receiving email
+        description: User has been unable to receive email for the past 15 minutes
+        attachments:
+          - path: path/to/attachment.txt
+        impact: low
+        urgency: low
+
+        other:
+          expected_start: 2021-02-12
+
+    - name: Change state of the incident
+      servicenow.itsm.incident:
+        instance:
+          host: https://instance_id.service-now.com
+          username: user
+          password: pass
+
+        state: in_progress
+        number: INC0000001
+
+    - name: Close incident
+      servicenow.itsm.incident:
+        instance:
+          host: https://instance_id.service-now.com
+          username: user
+          password: pass
+
+        state: closed
+        number: INC0000001
+        close_code: "Solved (Permanently)"
+        close_notes: "Closed"
+
+    - name: Delete incident
+      servicenow.itsm.incident:
+        instance:
+          host: https://instance_id.service-now.com
+          username: user
+          password: pass
+
+        state: absent
+        number: INC0000001
 
 
 
