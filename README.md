@@ -30,9 +30,9 @@ in production as-is.
 
 </pre>
 
-These examples differ slightly from the ones on the official documentation, because we are
-using a custom credential and these playbooks don't need plaintext user / password / instance
-written into them.  The original documentation for `servicenow.itsm.incident` is [here on ServiceNow's github page](https://github.com/ansible-collections/servicenow.itsm/blob/main/docs/servicenow.itsm.incident_module.rst).
+These examples differ slightly from the ones on the official documentation, because we are using a custom credential in Ansible Automation Platform and these playbooks don't need plaintext user / password / instance written into them.  
+
+The original documentation for `servicenow.itsm.incident` is [here on ServiceNow's github page](https://github.com/ansible-collections/servicenow.itsm/blob/main/docs/servicenow.itsm.incident_module.rst).
 
 Examples:
 --------
