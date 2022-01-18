@@ -30,6 +30,11 @@ in production as-is.
 
 </pre>
 
+These examples differ slightly from the ones on the official documentation, because we are
+using a custom credential and these playbooks don't need plaintext user / password / instance
+written into them.  [The original documentation for this module is here]("https://github.com/ansible-collections/servicenow.itsm/blob/main/docs/servicenow.itsm.incident_module.rst")
+
+
 Examples:
 --------
 
