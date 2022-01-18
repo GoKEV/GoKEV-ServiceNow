@@ -36,6 +36,8 @@ written into them.
 
 <a href="https://github.com/ansible-collections/servicenow.itsm/blob/main/docs/servicenow.itsm.incident_module.rst" target="_blank">The original documentation for this module is here.</a>
 
+[go](http://stackoverflow.com){:target="_blank" rel="noopener"}
+
 Examples:
 --------
 
