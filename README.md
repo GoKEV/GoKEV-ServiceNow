@@ -32,14 +32,6 @@ in production as-is.
 
 
 
-## Become A Certified Red Hat Content Provider:
-
-Please visit these links to learn more about certifying your content and partnering with Red Hat.  It's actually quite simple and great for recognition that your modules have gone the extra step to be recognized and supportable:
-
-* [Red Hat Ansible Automation Platform Partners](https://www.ansible.com/partners "Red Hat Ansible Automation Platform Partners")
-* [Ansible Certified Content FAQ](https://access.redhat.com/articles/4916901 "Ansible Certified Content FAQ")
-* [Ansible Docs on Module Creation](https://docs.ansible.com/ansible/latest/dev_guide/developing_modules_general.html "Ansible Docs on Module Creation")
-
 
 Author(s) Information
 ------------------
@@ -52,4 +44,12 @@ This project was created in January 2022 by [Kevin Holmes](http://GoKEV.com/), b
 - [Colin McCarthy's post on ServiceNow](https://www.ansible.com/blog/ansible-servicenow-opening-and-closing-tickets)
 - [Michael Ford's post on ServiceNow APIs](https://www.ansible.com/blog/ansible-servicenow-howto-part-3-making-outbound-restful-api-calls-to-ansible-tower)
 - [Some examples of using the Ansible Certified Collection from the Ansible blog](https://www.ansible.com/blog/certified-collection-servicenow)
+
+## Become A Certified Red Hat Content Provider:
+
+Please visit these links to learn more about certifying your content and partnering with Red Hat.  It's actually quite simple and great for recognition that your modules have gone the extra step to be recognized and supportable:
+
+* [Red Hat Ansible Automation Platform Partners](https://www.ansible.com/partners "Red Hat Ansible Automation Platform Partners")
+* [Ansible Certified Content FAQ](https://access.redhat.com/articles/4916901 "Ansible Certified Content FAQ")
+* [Ansible Docs on Module Creation](https://docs.ansible.com/ansible/latest/dev_guide/developing_modules_general.html "Ansible Docs on Module Creation")
 
