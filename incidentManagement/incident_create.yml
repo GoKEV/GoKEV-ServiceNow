@@ -9,10 +9,9 @@
     servicenow.itsm.incident:
       state: "{{ snticket_state | default('new') }}"
       caller: "{{ snticket_caller | default(omit) }}"
-      short_description: "{{ snticket_shdesc | default('playbook created missing short description') }}"
+      short_description: "{{ snticket_shdesc | default('created by an Ansible playbook but missing a short description') }}"
       description: "{{ snticket_desc | default(omit) }}"
-      impact: low
-      urgency: low
+      impact: "{{ snticket_impact | default('low') }}"
+      urgency: "{{ snticket_urgency | default('low') }}"
       other:
-        expected_start: 2021-02-12
-
+        expected_start: "{{ sn_slastart | default(omit) }}"

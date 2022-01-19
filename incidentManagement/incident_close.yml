@@ -8,13 +8,13 @@
   - name: Resolve incident
     servicenow.itsm.incident:
       state: resolved
-      number: INC0010001
+      number: "{{ sn_inci_number | default('INC0000000') }}"
       close_code: "Solved (Permanently)"
       close_notes: "Resolved"
       
   - name: Close incident
     servicenow.itsm.incident:
       state: closed
-      number: INC0010001
+      number: "{{ sn_inci_number | default('INC0000000') }}"
       close_code: "Solved (Permanently)"
-      close_notes: "Closed"
+      close_notes: "{{ sn_inci_closenotes | default('Closed') }}"

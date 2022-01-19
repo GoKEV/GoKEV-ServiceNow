@@ -1,0 +1,17 @@
+---
+- name: Create ticket with notes
+  hosts: localhost
+  gather_facts: no
+  connection: local
+
+  tasks:
+  - name: Change state of the incident
+    servicenow.itsm.incident:
+      number: "{{ sn_inci_number | default('INC0000000') }}"
+
+#new, in_progress, on_hold, resolved, closed, canceled, absent
+      state: "{{ sn_inci_state | default('in_progress') }}"
+
+#awaiting_caller, awaiting_change, awaiting_problem, awaiting_vendor
+      hold_reason: "{{ sn_inci_holdreason | default('awaiting_problem') }}"
+

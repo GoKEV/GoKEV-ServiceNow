@@ -1,0 +1,13 @@
+---
+- name: Create ticket with notes
+  hosts: localhost
+  gather_facts: no
+  connection: local
+
+  tasks:
+  - name: Change state of the incident
+    servicenow.itsm.incident:
+      number: "{{ sn_inci_number | default('INC0000000') }}"
+
+#low, medium, high
+      urgency: "{{ sn_inci_urgency | default('low') }}"

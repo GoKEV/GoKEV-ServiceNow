@@ -1,0 +1,11 @@
+---
+- name: Create ticket with notes
+  hosts: localhost
+  gather_facts: no
+  connection: local
+
+  tasks:
+  - name: Delete incident
+    servicenow.itsm.incident:
+      state: absent
+      number: "{{ sn_inci_number | default('INC0000000') }}"
