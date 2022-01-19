@@ -15,3 +15,8 @@
       urgency: "{{ snticket_urgency | default('low') }}"
       other:
         expected_start: "{{ sn_slastart | default(omit) }}"
+      register: sn_created
+
+  - name: spit out the info from the new incident
+    debug:
+      var: "{{ sn_created }}"
