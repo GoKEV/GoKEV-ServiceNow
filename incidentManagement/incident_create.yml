@@ -1,5 +1,5 @@
 ---
-- name: Create ticket with notes
+- name: Create new ServiceNow incident
   hosts: localhost
   gather_facts: no
   connection: local
