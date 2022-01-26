@@ -6,8 +6,8 @@
 
   tasks:
   - name: Pick a random value
-    set_fact:
-      snticket_caller: "{{ item }}"
+    debug:
+      msg: "{{ item }}"
     with_random_choice:
        - "allan.schwantd"
        - "darrel.ruffins"
@@ -23,10 +23,10 @@
        - "terra.plagge"
 
 
-- name: Create incident
+  - name: Create incident
     servicenow.itsm.incident:
       state: "{{ snticket_state | default('new') }}"
-      caller: "{{ snticket_caller | default(omit) }}"
+      caller: "{{ snticket_caller | default('svc.desk') }}"
       short_description: "{{ snticket_shdesc | default('created by an Ansible playbook but missing a short description') }}"
       description: "{{ snticket_desc | default(omit) }}"
       impact: "{{ snticket_impact | default('low') }}"
