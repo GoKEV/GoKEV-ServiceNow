@@ -34,4 +34,4 @@
 
   - name: spit out the info from the new incident
     debug:
-      var: sn_created
+      msg: "Created a new incident {{ sn_created.record.number }}"
