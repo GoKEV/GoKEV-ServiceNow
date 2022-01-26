@@ -9,10 +9,18 @@
     set_fact:
       snticket_caller: "{{ item }}"
     with_random_choice:
-       - "go through the door"
-       - "drink from the goblet"
-       - "press the red button"
-       - "do nothing"
+       - "allan.schwantd"
+       - "darrel.ruffins"
+       - "eva.seahorn"
+       - "isaac.zackery"
+       - "jacklyn.emayo"
+       - "lona.scronce"
+       - "maynard.kaewprasert	"
+       - "mellissa.sule"
+       - "reyna.bangle"
+       - "rob.phillips"
+       - "sean.bonnet"
+       - "terra.plagge"
 
 
 - name: Create incident
