@@ -5,7 +5,17 @@
   connection: local
 
   tasks:
-  - name: Create incident
+  - name: Pick a random value
+    set_fact:
+      snticket_caller: "{{ item }}"
+    with_random_choice:
+       - "go through the door"
+       - "drink from the goblet"
+       - "press the red button"
+       - "do nothing"
+
+
+- name: Create incident
     servicenow.itsm.incident:
       state: "{{ snticket_state | default('new') }}"
       caller: "{{ snticket_caller | default(omit) }}"
