@@ -14,7 +14,7 @@
       impact: "{{ snticket_impact | default('low') }}"
       urgency: "{{ snticket_urgency | default('low') }}"
       other:
-        expected_start: "{{ sn_slastart | default(omit) }}"
+        expected_start: "{{ sn_slastart | default('2022-01-01) }}"
     register: sn_created
 
   - name: spit out the info from the new incident
