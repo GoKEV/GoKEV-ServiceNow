@@ -4,29 +4,26 @@
   gather_facts: no
   connection: local
 
+  vars:
+    caller_choices:
+     - "allan.schwantd"
+     - "darrel.ruffins"
+     - "eva.seahorn"
+     - "isaac.zackery"
+     - "jacklyn.emayo"
+     - "lona.scronce"
+     - "maynard.kaewprasert"
+     - "mellissa.sule"
+     - "reyna.bangle"
+     - "rob.phillips"
+     - "sean.bonnet"
+     - "terra.plagge"
+
   tasks:
-  - name: Pick a random value
-    debug:
-      msg: "{{ item }}"
-    with_random_choice:
-       - "allan.schwantd"
-       - "darrel.ruffins"
-       - "eva.seahorn"
-       - "isaac.zackery"
-       - "jacklyn.emayo"
-       - "lona.scronce"
-       - "maynard.kaewprasert"
-       - "mellissa.sule"
-       - "reyna.bangle"
-       - "rob.phillips"
-       - "sean.bonnet"
-       - "terra.plagge"
-
-
   - name: Create incident
     servicenow.itsm.incident:
       state: "{{ snticket_state | default('new') }}"
-      caller: "{{ snticket_caller | default('svc.desk') }}"
+      caller: "{{ snticket_caller | default( caller_choices | random ) }}"
       short_description: "{{ snticket_shdesc | default('created by an Ansible playbook but missing a short description') }}"
       description: "{{ snticket_desc | default(omit) }}"
       impact: "{{ snticket_impact | default('low') }}"
